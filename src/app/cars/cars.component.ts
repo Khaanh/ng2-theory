@@ -1,15 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-cars',
   templateUrl: './cars.component.html',
   styleUrls: ['./cars.component.scss']
 })
-export class CarsComponent implements OnInit {
 
-  constructor() { }
+export class CarsComponent {
 
-  ngOnInit(): void {
+  addCarStatus = '';
+  inputText = '';
+
+  constructor() {
+
+  }
+
+  carAdd() {
+    this.addCarStatus = 'Car is added'
+  }
+
+  onKeyUp(event: Event) {
+    this.inputText = (<HTMLInputElement>event.target).value;
   }
 
 }

@@ -8,15 +8,23 @@ import { Component } from '@angular/core';
 
 export class CarsComponent {
 
-  inputText = '1234567890';
+  inputText = '';
   carStatus = false;
+  cars = ['Ford', 'Audi', 'BMW', 'Tesla', 'Toyota'];
+  items = [{ id: 3, name: 'item-1' }, { id: 6, name: 'item-2' }, { id: 9, name: 'item-3' }];
+  dates = [
+    new Date(2000, 12, 5).toDateString(),
+    new Date(2021, 2, 29).toDateString(),
+    new Date(2012, 3, 10).toDateString(),
+    new Date(2011, 8, 9).toDateString(),
+  ]
 
-  constructor() {
-
-  }
+  constructor() {}
 
   carAdd() {
     this.carStatus = true;
+    this.cars.push(this.inputText);
+    this.inputText = '';
   }
 
   onKeyUp(value) {
